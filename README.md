@@ -47,6 +47,34 @@ Next, let’s append the Debian package repository address to the server’s so
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 
 
+After both commands have been entered, we’ll run update so that apt will use the new repository.
+
+```
+sudo apt update
+```
+
+you screen should look something like this
+
+![](./project3images/sudoaptupdate.png)
+
+
+Finally, we’ll install Jenkins and its dependencies using the command:
+
+```
+sudo apt install jenkins
+```
+
+in my case i had already installed jenkins so i run the command my output looked something like the below output instead
+
+![](./project3images/installjenkinscmd1.png)
+
+
+Now that Jenkins and its dependencies are in place, we’ll start the Jenkins server.
+
+**Step 2 — Starting Jenkins**
+
+
+Let’s start Jenkins by using systemctl:
 
 
 
