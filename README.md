@@ -34,6 +34,18 @@ The version of Jenkins included with the default Ubuntu packages is often behind
 
 First, add the repository key to the system:
 
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+
+After the key is added the system will return with OK
+
+![](./project3images/addrepokeytosystemimage1reop.png)
+
+
+Next, let’s append the Debian package repository address to the server’s sources.list:
+
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
 
 
 
