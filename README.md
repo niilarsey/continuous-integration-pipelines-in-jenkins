@@ -4,5 +4,5 @@ in this project, i will demonstrate how to set up Jenkins to automatically test 
 
 # Project 3: 
 
-**Continuous Integration Pipelines in Jenkins**
+# **Continuous Integration Pipelines in Jenkins**
 
