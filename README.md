@@ -143,3 +143,20 @@ With Jenkins installed and our firewall configured, we can complete the installa
 
 
 
+# Step 4 — Setting Up Jenkins
+
+To set up your installation, visit Jenkins on its default port, 8080, using your server domain name or IP address: http://your_server_ip_or_domain:8080
+
+to do this, go to your browser and type "localhost:8080" in the browser tap
+
+You should receive the **Unlock Jenkins** screen, which displays the location of the initial password:
+
+![](./project3images/unlockjenkinsimage.png)
+
+
+In the terminal window, use the cat command to display the password:
+
+```
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
