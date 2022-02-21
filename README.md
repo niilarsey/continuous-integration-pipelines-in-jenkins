@@ -160,3 +160,13 @@ In the terminal window, use the cat command to display the password:
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
+Copy the 32-character alphanumeric password from the terminal and paste it into the **Administrator password** field, then click **Continue**.
+
+The next screen presents the option of installing suggested plugins or selecting specific plugins:
+
+
+![](./project3images/customizejenkinsimage.png)
+
+
+We’ll click the **Install suggested plugins option**, which will immediately begin the installation process.
+
