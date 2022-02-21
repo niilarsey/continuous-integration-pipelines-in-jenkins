@@ -34,8 +34,9 @@ The version of Jenkins included with the default Ubuntu packages is often behind
 
 First, add the repository key to the system:
 
+```
 wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-
+```
 
 After the key is added the system will return with OK
 
@@ -76,8 +77,9 @@ Now that Jenkins and its dependencies are in place, we’ll start the Jenkins se
 
 Let’s start Jenkins by using systemctl:
 
-
+```
 sudo systemctl start jenkins
+```
 
 ![](./project3images/systemstarjenkinsimage.png)
 
@@ -85,11 +87,14 @@ sudo systemctl start jenkins
 
 Since systemctl doesn’t display status output, i’ll use the status command to verify that Jenkins started successfully:
 
-
+```
 sudo systemctl status jenkins
+```
 
 If everything went well, the beginning of the status output shows that the service is active and configured to start at boot:
 if you get the green dot shows, then you've successfully started jenkins ans is ready.
 
 
 ![](./project3images/sudosystemstatusjenkinsgreendotimage.png)
+
+
