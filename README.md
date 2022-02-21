@@ -98,3 +98,48 @@ if you get the green dot shows, then you've successfully started jenkins ans is 
 ![](./project3images/sudosystemstatusjenkinsgreendotimage.png)
 
 
+Now that Jenkins is up and running, let’s adjust our firewall rules so that we can reach it from a web browser to complete the initial setup.
+
+# Step 3 — Opening the Firewall
+
+You will set up a UFW firewall. By default, Jenkins runs on port 8080. We’ll open that port using ufw:
+
+```
+sudo ufw allow 8080
+```
+
+
+![](./project3images/openingfirewallimage.png)
+
+***Note:*** If the firewall is inactive, the following commands will allow OpenSSH and enable the firewall:
+
+but before you run the following command, make sure you install a ssh server by running the this command otherwise you might get an error
+
+```
+sudo apt-get install openssh-server
+```
+one that is donw with, proceed with the following commands
+
+```
+sudo ufw allow OpenSSH
+sudo ufw enable
+```
+
+![](./project3images/enablingfirewallimage.png)
+
+
+Check ufw’s status to confirm the new rules:
+
+```
+sudo ufw statu
+```
+
+You’ll notice that traffic is allowed to port 8080 from anywhere:
+
+![](./project3images/checkufwstatusimage.png)
+
+
+With Jenkins installed and our firewall configured, we can complete the installation stage and dive into Jenkins setup.
+
+
+
