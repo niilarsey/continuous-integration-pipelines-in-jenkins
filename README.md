@@ -77,5 +77,19 @@ Now that Jenkins and its dependencies are in place, we’ll start the Jenkins se
 Let’s start Jenkins by using systemctl:
 
 
+sudo systemctl start jenkins
+
+![](./project3images/systemstarjenkinsimage.png)
 
 
+
+Since systemctl doesn’t display status output, i’ll use the status command to verify that Jenkins started successfully:
+
+
+sudo systemctl status jenkins
+
+If everything went well, the beginning of the status output shows that the service is active and configured to start at boot:
+if you get the green dot shows, then you've successfully started jenkins ans is ready.
+
+
+![](./project3images/sudosystemstatusjenkinsgreendotimage.png)
