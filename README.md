@@ -350,3 +350,50 @@ You have now learned basic management commands and should be ready to configure 
 # How to Secure Nginx with Let’s Encrypt on Ubuntu 20.04
 
 
+Let’s Encrypt is a Certificate Authority (CA) that provides an easy way to obtain and install free TLS/SSL certificates, thereby enabling encrypted HTTPS on web servers. It simplifies the process by providing a software client, Certbot, that attempts to automate most (if not all) of the required steps. Currently, the entire process of obtaining and installing a certificate is fully automated on both Apache and Nginx.
+
+In this project, you will use Certbot to obtain a free SSL certificate for Nginx on Ubuntu 20.04 and set up your certificate to renew automatically.
+
+This project will use a separate Nginx server configuration file instead of the default file. We recommend creating new Nginx server block files for each domain because it helps to avoid common mistakes and maintains the default files as a fallback configuration.
+
+# Prerequisites
+For this step I will need the following in order to continue:
+
+One Ubuntu 20.04 server set up including a sudo-enabled non-root user and a firewall.
+
+A registered domain name. This project will use example.com throughout. You can purchase a domain name from Namecheap, get one for free with Freenom, or use the domain registrar of your choice.
+
+Both of the following DNS records set up for your server.
+
+A record with example.com pointing to your server’s public IP address.
+
+A record with www.example.com pointing to your server’s public IP address.
+
+A record with www.example.com pointing to your server’s public IP address.
+
+# Step 1 — Installing Certbot
+
+The first step to using Let’s Encrypt to obtain an SSL certificate is to install the Certbot software on your server.
+
+Install Certbot and it’s Nginx plugin with apt:
+
+```
+sudo apt install certbot python3-certbot-nginx
+```
+
+Certbot is now ready to use, but in order for it to automatically configure SSL for Nginx, we need to verify some of Nginx’s configuration.
+
+![](./project3images/certbotinstallimage.png)
+
+# Step 2 — Confirming Nginx’s Configuration
+
+Certbot needs to be able to find the correct server block in your Nginx configuration for it to be able to automatically configure SSL. Specifically, it does this by looking for a server_name directive that matches the domain you request a certificate for.
+
+You should have a server block for your domain at /etc/nginx/sites-available/example.com with the server_name directive already set appropriately.
+
+To check, open the configuration file for your domain using nano or your favorite text editor:
+
+```
+sudo nano /etc/nginx/sites-available/example.com
+```
+
