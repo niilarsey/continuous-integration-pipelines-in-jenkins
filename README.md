@@ -170,3 +170,79 @@ The next screen presents the option of installing suggested plugins or selecting
 
 We’ll click the **Install suggested plugins option**, which will immediately begin the installation process.
 
+![](./project3images/jenkinsgettingstartedpageimage.png)
+
+
+When the installation is complete, you’ll be prompted to set up the first administrative user. It’s possible to skip this step and continue as admin using the initial password we used above, but we’ll take a moment to create the user.
+
+**Note:** The default Jenkins server is NOT encrypted, so the data submitted with this form is not protected. 
+
+![](./project3images/createfirstadminuserimage.png)
+
+
+Enter the name and password for your user:
+
+![](./project3images/firtuseradminuserimage1.png)
+
+
+You’ll receive an Instance Configuration page that will ask you to confirm the preferred URL for your Jenkins instance. Confirm either the domain name for your server or your server’s IP address:
+
+![](./project3images/instanceconfigimage.png)
+
+After confirming the appropriate information, click **Save and Finish**. You’ll receive a confirmation page confirming that **“Jenkins is Ready!”:**
+![](./project3images/jenkinsreadyimage.png)
+
+
+Click **Start using Jenkins** to visit the main Jenkins dashboard:
+
+![](./project3images/welcometojenkinspageimage.png)
+
+At this point, you have completed a successful installation of Jenkins.
+
+# Conclusion
+In this project, you installed Jenkins using the project-provided packages, started the server, opened the firewall, and created an administrative user. At this point, you can start exploring Jenkins.
+
+# 2. How to Install Nginx on Ubuntu 20.04
+
+[Nginx](https://www.nginx.com/) is one of the most popular web servers in the world and is responsible for hosting some of the largest and highest-traffic sites on the internet. It is a lightweight choice that can be used as either a web server or reverse proxy.
+
+In this project, we’ll discuss how to install Nginx on your Ubuntu 20.04 server, adjust the firewall, manage the Nginx process, and set up server blocks for hosting more than one domain from a single server.
+
+
+# Prerequisites
+
+Before you begin this project, you should have a regular, non-root user with sudo privileges configured on your server.
+
+You will also optionally want to have registered a domain name before completing the last steps of this project. 
+
+when you have an account available, log in as your non-root user to begin.
+
+# Step 1 – Installing Nginx
+
+Because Nginx is available in Ubuntu’s default repositories, it is possible to install it from these repositories using the apt packaging system.
+
+Since this is our first interaction with the apt packaging system in this session, we will update our local package index so that we have access to the most recent package listings. Afterwards, we can install nginx:
+
+
+```
+sudo apt update
+sudo apt install nginx
+```
+
+After accepting the procedure, apt will install Nginx and any required dependencies to your server.
+
+![](./project3images/nginxinstalluodateimage.png)
+
+# Step 2 – Adjusting the Firewall
+
+Before testing Nginx, the firewall software needs to be adjusted to allow access to the service. Nginx registers itself as a service with ufw upon installation, making it straightforward to allow Nginx access.
+
+List the application configurations that ufw knows how to work with by typing:
+
+```
+sudo ufw app list
+```
+You should get a listing of the application profiles:
+
+![](./project3images/sudoufwapplistimage.png)
+
