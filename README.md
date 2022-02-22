@@ -246,3 +246,63 @@ You should get a listing of the application profiles:
 
 ![](./project3images/sudoufwapplistimage.png)
 
+as you can see, there are three profiles availlable for Nginx:
+
+Nginx Full: This profile opens both port 80 (normal, unencrypted web traffic) and port 443 (TLS/SSL encrypted traffic)
+
+Nginx HTTP: This profile opens only port 80 (normal, unencrypted web traffic)
+
+Nginx HTTPS: This profile opens only port 443 (TLS/SSL encrypted traffic)
+
+It is recommended that you enable the most restrictive profile that will still allow the traffic you’ve configured. Right now, we will only need to allow traffic on port 80.
+
+You can enable this by typing:
+
+```
+sudo ufw allow 'Nginx HTTP'
+```
+You can verify the change by typing:
+
+```
+sudo ufw status
+```
+
+The output will indicated which HTTP traffic is allowed:
+
+![](./project3images/HTTPtraficallowedoutputimage.png)
+
+
+### Step 3 – Checking your Web Server
+
+At the end of the installation process, Ubuntu 20.04 starts Nginx. The web server should already be up and running.
+
+We can check with the `systemd` init system to make sure the service is running by typing:
+
+```
+systemctl status nginx
+```
+
+![](./project3images/nginxcheckingwebserverimage.png)
+
+
+with the greenlight on, this indicates to us that the web server is running.
+
+
+As confirmed by this out, the service has started successfully. However, the best way to test this is to actually request a page from Nginx.
+
+You can access the default Nginx landing page to confirm that the software is running properly by navigating to your server’s IP address. If you do not know your server’s IP address, you can find it by using the icanhazip.com tool, which will give you your public IP address as received from another location on the internet:
+
+```
+curl -4 icanhazip.com
+```
+
+When you have your server’s IP address, enter it into your browser’s address bar:
+
+```
+http://your_server_ip
+```
+You should receive the default Nginx landing page:
+
+
+
+
